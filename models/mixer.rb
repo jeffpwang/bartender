@@ -6,6 +6,7 @@ class Mixer
     def initialize(name)
         @cocktails = []
         @@all << self
+        @name = name
     end
     
     def self.all
@@ -13,6 +14,7 @@ class Mixer
     end
     
     def self.find_by_name(name)
+        
         self.all.find do |mixer|
             mixer.name == name
         end

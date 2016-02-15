@@ -15,7 +15,7 @@ describe Cocktail do
     end 
     
     it 'accepts a link as an argument upon initialization' do 
-        link = "www.google.com"
+        link = "http://www.bonappetit.com/recipe/manhattan"
         expect(cocktail.link).to eq(link)
     end 
     

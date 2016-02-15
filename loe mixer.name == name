@@ -1,0 +1,60 @@
+=> [[32m#<Mixer:0x00000001317b70[0m
+  @cocktails[32m=[0m
+   [[32m#<Cocktail:0x00000001317c88[0m
+     @all_ingredients[32m=[0m
+      [[32m#<Spirit:0x00000001317be8[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317c88[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mwhiskey[1;31m"[0m[31m[0m[32m>[0m, [32m#<Mixer:0x00000001317b70[0m ...[32m>[0m],
+     @link[32m=[0m[31m[1;31m"[0m[31mhttp://www.bonappetit.com/recipe/manhattan[1;31m"[0m[31m[0m,
+     @mixers[32m=[0m[[32m#<Mixer:0x00000001317b70[0m ...[32m>[0m],
+     @name[32m=[0m[31m[1;31m"[0m[31mmanhattan[1;31m"[0m[31m[0m,
+     @spirits[32m=[0m[[32m#<Spirit:0x00000001317be8[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317c88[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mwhiskey[1;31m"[0m[31m[0m[32m>[0m][32m>[0m],
+  @name[32m=[0m[[31m[1;31m"[0m[31mvermouth[1;31m"[0m[31m[0m][32m>[0m,
+ [32m#<Mixer:0x00000001317a08[0m
+  @cocktails[32m=[0m
+   [[32m#<Cocktail:0x00000001317af8[0m
+     @all_ingredients[32m=[0m
+      [[32m#<Spirit:0x00000001317a58[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317af8[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mgin[1;31m"[0m[31m[0m[32m>[0m, [32m#<Mixer:0x00000001317a08[0m ...[32m>[0m],
+     @link[32m=[0m[31m[1;31m"[0m[31mhttp://www.inspiredtaste.net/19488/gin-and-tonic-recipe/[1;31m"[0m[31m[0m,
+     @mixers[32m=[0m[[32m#<Mixer:0x00000001317a08[0m ...[32m>[0m],
+     @name[32m=[0m[31m[1;31m"[0m[31mgin and tonic[1;31m"[0m[31m[0m,
+     @spirits[32m=[0m[[32m#<Spirit:0x00000001317a58[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317af8[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mgin[1;31m"[0m[31m[0m[32m>[0m][32m>[0m],
+  @name[32m=[0m[[31m[1;31m"[0m[31mtonic[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31mlime juice[1;31m"[0m[31m[0m][32m>[0m,
+ [32m#<Mixer:0x000000013178c8[0m
+  @cocktails[32m=[0m
+   [[32m#<Cocktail:0x000000013179b8[0m
+     @all_ingredients[32m=[0m
+      [[32m#<Spirit:0x00000001317918[0m @cocktails[32m=[0m[[32m#<Cocktail:0x000000013179b8[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mgin[1;31m"[0m[31m[0m[32m>[0m, [32m#<Mixer:0x000000013178c8[0m ...[32m>[0m],
+     @link[32m=[0m[31m[1;31m"[0m[31mhttp://www.bonappetit.com/recipe/negroni[1;31m"[0m[31m[0m,
+     @mixers[32m=[0m[[32m#<Mixer:0x000000013178c8[0m ...[32m>[0m],
+     @name[32m=[0m[31m[1;31m"[0m[31mnegroni[1;31m"[0m[31m[0m,
+     @spirits[32m=[0m[[32m#<Spirit:0x00000001317918[0m @cocktails[32m=[0m[[32m#<Cocktail:0x000000013179b8[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mgin[1;31m"[0m[31m[0m[32m>[0m][32m>[0m],
+  @name[32m=[0m[[31m[1;31m"[0m[31mvermouth[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31mcampari[1;31m"[0m[31m[0m][32m>[0m,
+ [32m#<Mixer:0x00000001317738[0m
+  @cocktails[32m=[0m
+   [[32m#<Cocktail:0x00000001317878[0m
+     @all_ingredients[32m=[0m
+      [[32m#<Spirit:0x000000013177b0[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317878[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mcuracao[1;31m"[0m[31m[0m[32m>[0m, [32m#<Mixer:0x00000001317738[0m ...[32m>[0m],
+     @link[32m=[0m[31m[1;31m"[0m[31mhttp://www.epicurious.com/recipes/food/views/mai-tai-230577[1;31m"[0m[31m[0m,
+     @mixers[32m=[0m[[32m#<Mixer:0x00000001317738[0m ...[32m>[0m],
+     @name[32m=[0m[31m[1;31m"[0m[31mmai tai[1;31m"[0m[31m[0m,
+     @spirits[32m=[0m[[32m#<Spirit:0x000000013177b0[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317878[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mcuracao[1;31m"[0m[31m[0m[32m>[0m][32m>[0m],
+  @name[32m=[0m[[31m[1;31m"[0m[31mlime juice[1;31m"[0m[31m[0m][32m>[0m,
+ [32m#<Mixer:0x000000013175a8[0m
+  @cocktails[32m=[0m
+   [[32m#<Cocktail:0x000000013176e8[0m
+     @all_ingredients[32m=[0m
+      [[32m#<Spirit:0x00000001317620[0m @cocktails[32m=[0m[[32m#<Cocktail:0x000000013176e8[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mtequilla[1;31m"[0m[31m[0m[32m>[0m, [32m#<Mixer:0x000000013175a8[0m ...[32m>[0m],
+     @link[32m=[0m[31m[1;31m"[0m[31mhttp://www.cocktailbuilder.com/recipe/juan-collins##searchResultsHeader[1;31m"[0m[31m[0m,
+     @mixers[32m=[0m[[32m#<Mixer:0x000000013175a8[0m ...[32m>[0m],
+     @name[32m=[0m[31m[1;31m"[0m[31mjuan collins[1;31m"[0m[31m[0m,
+     @spirits[32m=[0m[[32m#<Spirit:0x00000001317620[0m @cocktails[32m=[0m[[32m#<Cocktail:0x000000013176e8[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mtequilla[1;31m"[0m[31m[0m[32m>[0m][32m>[0m],
+  @name[32m=[0m[[31m[1;31m"[0m[31mlemon juice[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31mclub soda[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31msugar[1;31m"[0m[31m[0m][32m>[0m,
+ [32m#<Mixer:0x00000001317418[0m
+  @cocktails[32m=[0m
+   [[32m#<Cocktail:0x00000001317530[0m
+     @all_ingredients[32m=[0m
+      [[32m#<Spirit:0x00000001317468[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317530[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mrum[1;31m"[0m[31m[0m[32m>[0m, [32m#<Mixer:0x00000001317418[0m ...[32m>[0m],
+     @link[32m=[0m[31m[1;31m"[0m[31mhttp://www.esquire.com/food-drink/drinks/recipes/a3769/cuba-libre-drink-recipe/[1;31m"[0m[31m[0m,
+     @mixers[32m=[0m[[32m#<Mixer:0x00000001317418[0m ...[32m>[0m],
+     @name[32m=[0m[31m[1;31m"[0m[31mrum coke[1;31m"[0m[31m[0m,
+     @spirits[32m=[0m[[32m#<Spirit:0x00000001317468[0m @cocktails[32m=[0m[[32m#<Cocktail:0x00000001317530[0m ...[32m>[0m], @name[32m=[0m[31m[1;31m"[0m[31mrum[1;31m"[0m[31m[0m[32m>[0m][32m>[0m],
+  @name[32m=[0m[[31m[1;31m"[0m[31mcoke[1;31m"[0m[31m[0m][32m>[0m]

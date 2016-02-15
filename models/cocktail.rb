@@ -1,4 +1,5 @@
 class Cocktail
+
     
     attr_accessor :name, :spirits, :mixers, :all_ingredients, :link
     @@all = []
@@ -41,17 +42,18 @@ class Cocktail
     end 
     
     ##Find by spirit and return mixer. Provide spirit and return array of associated mixers.
-    def self.find_associated_mixers(spirit)
+    def self.find_associated_mixers(spirit_name)
+        
+        #binding.pry
+        spirit_id = Spirit.find_by_name(spirit_name)
         
         list_of_cocktails = self.all.select do |cocktail_instance|
-            cocktail_instance.spirits.include?(spirit)
+            cocktail_instance.spirits.include?(spirit_id)
         end
         
-        new_array_of_mixers = list_of_cocktails.each_with_object([]) do |cocktail, array_of_mixers|
+        list_of_cocktails.each_with_object([]) do |cocktail, array_of_mixers|
             array_of_mixers << cocktail.mixers
-        end
-        
-        new_array_of_mixers.flatten
+        end.flatten.uniq
          
     end
     
@@ -65,18 +67,30 @@ class Cocktail
         
     end
     
-    def self.find_cocktail(mixer, spirit)
+    def self.find_cocktail(mixer_name, spirit_name)
+        
+        mixer_object = Mixer.find_by_name(mixer_name)
+        spirit_object = Spirit.find_by_name(spirit_name)
+        #binding.pry
          list_of_cocktails = self.all.select do |cocktail_instance|
-            cocktail_instance.spirits.include?(spirit)
+            cocktail_instance.spirits.include?(spirit_object)
         end
         
         cocktail_selection = list_of_cocktails.find do |cocktail|
-            cocktail.mixers.include?(mixer)
+            cocktail.mixers.include?(mixer_object)
         end
+        
         
         cocktail_selection
         
     end
+    
+    def self.find_by_name(name)
+        self.all.find do |cocktail|
+            cocktail.name == name
+        end 
+    end 
+    
     
     
 end

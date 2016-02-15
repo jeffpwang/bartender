@@ -20,8 +20,9 @@ cocktail_hash =
 # we're only grabbing one spirit, so may run into issue if there are two spirits in one cocktail
 
 cocktail_hash.each do |cocktail_name, cocktail_hash_data|
-   new_cocktail = Cocktail.new(cocktail_name)
-   new_cocktail.add_spirit(cocktail_hash_data[:spirits].first)
-   new_cocktail.add_mixer(cocktail_hash_data[:mixers])
-    
+  new_cocktail = Cocktail.new(cocktail_name, cocktail_hash_data[:link])
+  new_cocktail.add_spirit(cocktail_hash_data[:spirits].first)
+  cocktail_hash_data[:mixers].each do |mixer| 
+      new_cocktail.add_mixer(mixer)
+  end 
 end 
