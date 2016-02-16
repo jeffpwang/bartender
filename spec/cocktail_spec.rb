@@ -3,7 +3,7 @@ require 'pry'
 
 describe Cocktail do 
     describe '#initialize' do 
-        let(:cocktail){Cocktail.new("manhattan", 'www.google.com')}
+        let(:cocktail){Cocktail.new("manhattan", 'http://www.bonappetit.com/recipe/manhattan')}
         
     it 'creates a new instance of a cocktail' do 
         expect(cocktail).to be_an_instance_of(Cocktail)

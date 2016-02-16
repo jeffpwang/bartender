@@ -14,8 +14,9 @@ class Spirit
     end 
     
     def self.return_name_of_spirits
+        
         name_array = self.all.map do |spirit|
-             cocktail.name
+             spirit.name
         end
         name_array
     end
