@@ -1,5 +1,6 @@
 require 'csv'
 require 'pry'
+require_relative '../config/environment.rb'
 
     all_names = []
     all_ingredients = []
@@ -46,25 +47,42 @@ require 'pry'
 
 cocktail_hash = 
     { "manhattan" => {:spirits => ["whiskey"], :mixers => ["vermouth"], :link => 'http://www.bonappetit.com/recipe/manhattan' },
-     "gin & tonic" => {:spirits =>["gin"], :mixers => ["tonic", "lime juice"], :link => 'http://www.inspiredtaste.net/19488/gin-and-tonic-recipe/' }, 
-     "negroni" => {:spirits => ["gin"], :mixers => ["vermouth", "campari"], :link => 'http://www.bonappetit.com/recipe/negroni' },
-     "mai tai" => {:spirits => ["curacao"], :mixers => ["lime juice"], :link => 'http://www.epicurious.com/recipes/food/views/mai-tai-230577' },
-     "juan collins" => {:spirits => ["tequila"], :mixers => ["lemon juice", "club soda", 'sugar'], :link => 'http://www.cocktailbuilder.com/recipe/juan-collins##searchResultsHeader'},
-     "rum & coke" => {:spirits => ["rum"], :mixers => ["coke"], :link => 'http://www.esquire.com/food-drink/drinks/recipes/a3769/cuba-libre-drink-recipe/' }, 
-     "old fashioned" =>{:spirits => ["whiskey"], :mixers => ["bitters", "sugar"], :link => 'http://www.seriouseats.com/recipes/2008/06/traditional-old-fashioned-recipe.html'}, 
-      "margarita" =>{:spirits => ["tequila"], :mixers => ["triple sec", "lime juice"], :link => 'http://www.seriouseats.com/recipes/2015/04/classic-margarita-recipe-tequila-cocktail.html'}, 
-      "mint julep" =>{:spirits => ["bourbon"], :mixers => ["mint", "sugar"], :link => 'http://www.seriouseats.com/recipes/2010/04/how-to-make-a-mint-julep-recipe-derby-day.html'}, 
-      "tom collins" =>{:spirits => ["gin"], :mixers => ["club soda", "lemon juice", "sugar"], :link => 'http://allrecipes.com/recipe/222511/tom-collins-cocktail/'},
-      "cosmopolitan" =>{:spirits => ["vodka"], :mixers => ["triple sec", "cranberry juice", "lime juice"], :link => 'http://www.seriouseats.com/recipes/2011/10/how-to-make-a-cosmopolitan-cocktail-best-recipe.html'},      "vieux carré" =>{:spirits => ["whiskey"], :mixers => ["bitters", "cognac", "vermouth"], :link => 'http://www.seriouseats.com/recipes/2008/07/vieux-carre-recipe.html'},
+      "gin & tonic" => {:spirits =>["gin"], :mixers => ["tonic", "lime juice"], :link => 'http://www.inspiredtaste.net/19488/gin-and-tonic-recipe/' }, 
+      "negroni" => {:spirits => ["gin"], :mixers => ["vermouth", "campari"], :link => 'http://www.bonappetit.com/recipe/negroni' },
+      "mai tai" => {:spirits => ["curacao"], :mixers => ["lime juice"], :link => 'http://www.epicurious.com/recipes/food/views/mai-tai-230577' },
+      "juan collins" => {:spirits => ["tequila"], :mixers => ["lemon juice", "club soda", 'sugar'], :link => 'http://www.cocktailbuilder.com/recipe/juan-collins##searchResultsHeader'},
+      "rum & coke" => {:spirits => ["rum"], :mixers => ["coke"], :link => 'http://www.esquire.com/food-drink/drinks/recipes/a3769/cuba-libre-drink-recipe/' }, 
+      "old fashioned" => {:spirits => ["whiskey"], :mixers => ["bitters", "sugar"], :link => 'http://www.seriouseats.com/recipes/2008/06/traditional-old-fashioned-recipe.html'}, 
+      "margarita" => {:spirits => ["tequila"], :mixers => ["triple sec", "lime juice"], :link => 'http://www.seriouseats.com/recipes/2015/04/classic-margarita-recipe-tequila-cocktail.html'}, 
+      "mint julep" => {:spirits => ["bourbon"], :mixers => ["mint", "sugar"], :link => 'http://www.seriouseats.com/recipes/2010/04/how-to-make-a-mint-julep-recipe-derby-day.html'}, 
+      "tom collins" => {:spirits => ["gin"], :mixers => ["club soda", "lemon juice", "sugar"], :link => 'http://allrecipes.com/recipe/222511/tom-collins-cocktail/'},
+      "cosmopolitan" => {:spirits => ["vodka"], :mixers => ["triple sec", "cranberry juice", "lime juice"], :link => 'http://www.seriouseats.com/recipes/2011/10/how-to-make-a-cosmopolitan-cocktail-best-recipe.html'},      "vieux carré" =>{:spirits => ["whiskey"], :mixers => ["bitters", "cognac", "vermouth"], :link => 'http://www.seriouseats.com/recipes/2008/07/vieux-carre-recipe.html'},
 
  }
 # we're only grabbing one spirit, so may run into issue if there are two spirits in one cocktail
 
 cocktail_hash.each do |cocktail_name, cocktail_hash_data|
   new_cocktail = Cocktail.new(cocktail_name, cocktail_hash_data[:link])
-  new_cocktail.add_spirit(cocktail_hash_data[:spirits].first)
-  cocktail_hash_data[:mixers].each do |mixer| 
-      new_cocktail.add_mixer(mixer)
+  
+  if Spirit.return_name_of_spirits.include?(cocktail_hash_data[:spirits].first)
+    cocktail_spirit = Spirit.find_by_name(cocktail_hash_data[:spirits].first)
+    cocktail_spirit.cocktails << new_cocktail
+    new_cocktail.spirits << cocktail_spirit
+  else
+      new_cocktail.add_spirit(cocktail_hash_data[:spirits].first)
   end 
+
+  
+  
+  cocktail_hash_data[:mixers].each do |mixer| 
+    if Mixer.return_name_of_mixers.include?(mixer)
+     cocktail_mixer = Mixer.find_by_name(mixer)
+     cocktail_mixer.cocktails << new_cocktail
+     new_cocktail.mixers << cocktail_mixer
+    else
+      new_cocktail.add_mixer(mixer)
+    end 
+  end 
+  
 end 
 

@@ -62,6 +62,7 @@ action = gets.chomp
        # when action == 'list' #need to be able to select specific cocktail cocktail.name
         
         user_spirit_choice = gets.chomp
+        
         associated_mixers = Cocktail.find_associated_mixers(user_spirit_choice.downcase)
         
         puts "Please choose a mixer that works well with your liquor choice:"
@@ -71,9 +72,10 @@ action = gets.chomp
         end
         user_mixer_choice = gets.chomp
         
+        
         cocktail_selection = Cocktail.find_cocktail(user_mixer_choice.downcase, user_spirit_choice.downcase)
-        # binding.pry
-        puts "The drink for you is a #{cocktail_selection.name.split.map(&:capitalize).join(' ')}. Click on the following link to see recipe: #{cocktail_selection.link}"
+        user_cocktail = cocktail_selection.first.name 
+        puts "The drink for you is a #{user_cocktail.split.map(&:capitalize).join(' ')}."
         
     when '3' 
         puts "What is the name of the cocktail you would like to add?"

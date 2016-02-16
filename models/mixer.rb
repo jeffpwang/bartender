@@ -20,5 +20,13 @@ class Mixer
         end
     end
     
+    def self.return_name_of_mixers
+        
+        name_array = self.all.map do |mixer|
+             mixer.name
+        end
+        name_array
+    end
+    
     
 end 

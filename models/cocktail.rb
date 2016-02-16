@@ -53,7 +53,7 @@ class Cocktail
             
         end
 
-        new_list = list_of_cocktails.each_with_object([]) do |cocktail, array_of_mixers|
+        list_of_cocktails.each_with_object([]) do |cocktail, array_of_mixers|
             array_of_mixers << cocktail.mixers
         end.flatten.uniq
          
@@ -69,30 +69,30 @@ class Cocktail
         
     end
     
-      def self.find_cocktail(mixer_name, spirit_name)
-
+    def self.find_cocktail(mixer_name, spirit_name)
+       # binding.pry
 
         mixer_object = Mixer.find_by_name(mixer_name)
         spirit_object = Spirit.find_by_name(spirit_name)
+      
 
          list_of_cocktails = self.all.select do |cocktail_instance|
-
+            cocktail_instance.mixers.include?(mixer_object) &&
             cocktail_instance.spirits.include?(spirit_object)
         end
+        
 
-        if list_of_cocktails.count == 1
-          return list_of_cocktails.first
+    #     if list_of_cocktails.count == 1
+    #       return list_of_cocktails.first
 
-        else
+    #     else
 
-          cocktail_selection = []
-        #cocktail_instance.mixers.include?(mixer_object)
-        cocktail_selection = list_of_cocktails.find do |cocktail|
-          binding.pry
-          cocktail.mixers.include?(mixer_object)
-       end
+    #       cocktail_selection = []
+    #     #cocktail_instance.mixers.include?(mixer_object)
+    #     cocktail_selection = list_of_cocktails.find do |cocktail|
+    #       cocktail.mixers.include?(mixer_object)
+    #   end
 
-     end
 
 
     end
